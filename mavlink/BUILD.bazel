@@ -1,0 +1,24 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "go_default_library",
+    srcs = [
+        "ardupilotmega.go",
+        "common.go",
+        "dialect.go",
+        "doc.go",
+        "message.go",
+    ],
+    importpath = "github.com/tritonuas/god/go-mavlink/mavlink",
+    visibility = ["//visibility:public"],
+    deps = ["//go-mavlink/x25:go_default_library"],
+)
+
+go_test(
+    name = "go_default_test",
+    srcs = [
+        "dialect_test.go",
+        "message_test.go",
+    ],
+    embed = [":go_default_library"],
+)
