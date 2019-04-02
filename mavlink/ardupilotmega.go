@@ -15,37 +15,37 @@ import (
 
 // AccelcalVehiclePos:
 const (
-	ACCELCAL_VEHICLE_POS_LEVEL    = 1 //
-	ACCELCAL_VEHICLE_POS_LEFT     = 2 //
-	ACCELCAL_VEHICLE_POS_RIGHT    = 3 //
-	ACCELCAL_VEHICLE_POS_NOSEDOWN = 4 //
-	ACCELCAL_VEHICLE_POS_NOSEUP   = 5 //
-	ACCELCAL_VEHICLE_POS_BACK     = 6 //
-	ACCELCAL_VEHICLE_POS_SUCCESS  = 6 //
-	ACCELCAL_VEHICLE_POS_FAILED   = 7 //
+	ACCELCAL_VEHICLE_POS_LEVEL    = 1        //
+	ACCELCAL_VEHICLE_POS_LEFT     = 2        //
+	ACCELCAL_VEHICLE_POS_RIGHT    = 3        //
+	ACCELCAL_VEHICLE_POS_NOSEDOWN = 4        //
+	ACCELCAL_VEHICLE_POS_NOSEUP   = 5        //
+	ACCELCAL_VEHICLE_POS_BACK     = 6        //
+	ACCELCAL_VEHICLE_POS_SUCCESS  = 16777215 //
+	ACCELCAL_VEHICLE_POS_FAILED   = 16777216 //
 )
 
 // MavCmd:
 const (
-	MAV_CMD_DO_GRIPPER                      = 211 // Mission command to operate EPM gripper
-	MAV_CMD_DO_AUTOTUNE_ENABLE              = 212 // Enable/disable autotune
-	MAV_CMD_NAV_ALTITUDE_WAIT               = 83  // Mission command to wait for an altitude or downwards vertical speed. This is meant for high altitude balloon launches, allowing the aircraft to be idle until either an altitude is reached or a negative vertical speed is reached (indicating early balloon burst). The wiggle time is how often to wiggle the control surfaces to prevent them seizing up.
-	MAV_CMD_POWER_OFF_INITIATED             = 3   // A system wide power-off event has been initiated.
-	MAV_CMD_SOLO_BTN_FLY_CLICK              = 4   // FLY button has been clicked.
-	MAV_CMD_SOLO_BTN_FLY_HOLD               = 5   // FLY button has been held for 1.5 seconds.
-	MAV_CMD_SOLO_BTN_PAUSE_CLICK            = 6   // PAUSE button has been clicked.
-	MAV_CMD_FIXED_MAG_CAL                   = 7   // Magnetometer calibration based on fixed position         in earth field given by inclination, declination and intensity
-	MAV_CMD_FIXED_MAG_CAL_FIELD             = 8   // Magnetometer calibration based on fixed expected field values in milliGauss
-	MAV_CMD_DO_START_MAG_CAL                = 9   // Initiate a magnetometer calibration
-	MAV_CMD_DO_ACCEPT_MAG_CAL               = 10  // Initiate a magnetometer calibration
-	MAV_CMD_DO_CANCEL_MAG_CAL               = 11  // Cancel a running magnetometer calibration
-	MAV_CMD_ACCELCAL_VEHICLE_POS            = 12  // Used when doing accelerometer calibration. When sent to the GCS tells it what position to put the vehicle in. When sent to the vehicle says what position the vehicle is in.
-	MAV_CMD_DO_SEND_BANNER                  = 13  // Reply with the version banner
-	MAV_CMD_GIMBAL_RESET                    = 14  // Causes the gimbal to reset and boot as if it was just powered on
-	MAV_CMD_SET_FACTORY_TEST_MODE           = 15  // Command autopilot to get into factory test/diagnostic mode
-	MAV_CMD_GIMBAL_AXIS_CALIBRATION_STATUS  = 16  // Reports progress and success or failure of gimbal axis calibration procedure
-	MAV_CMD_GIMBAL_REQUEST_AXIS_CALIBRATION = 17  // Starts commutation calibration on the gimbal
-	MAV_CMD_GIMBAL_FULL_RESET               = 18  // Erases gimbal application and parameters
+	MAV_CMD_DO_GRIPPER                      = 211   // Mission command to operate EPM gripper
+	MAV_CMD_DO_AUTOTUNE_ENABLE              = 212   // Enable/disable autotune
+	MAV_CMD_NAV_ALTITUDE_WAIT               = 83    // Mission command to wait for an altitude or downwards vertical speed. This is meant for high altitude balloon launches, allowing the aircraft to be idle until either an altitude is reached or a negative vertical speed is reached (indicating early balloon burst). The wiggle time is how often to wiggle the control surfaces to prevent them seizing up.
+	MAV_CMD_POWER_OFF_INITIATED             = 42000 // A system wide power-off event has been initiated.
+	MAV_CMD_SOLO_BTN_FLY_CLICK              = 42001 // FLY button has been clicked.
+	MAV_CMD_SOLO_BTN_FLY_HOLD               = 42002 // FLY button has been held for 1.5 seconds.
+	MAV_CMD_SOLO_BTN_PAUSE_CLICK            = 42003 // PAUSE button has been clicked.
+	MAV_CMD_FIXED_MAG_CAL                   = 42004 // Magnetometer calibration based on fixed position         in earth field given by inclination, declination and intensity
+	MAV_CMD_FIXED_MAG_CAL_FIELD             = 42005 // Magnetometer calibration based on fixed expected field values in milliGauss
+	MAV_CMD_DO_START_MAG_CAL                = 42424 // Initiate a magnetometer calibration
+	MAV_CMD_DO_ACCEPT_MAG_CAL               = 42425 // Initiate a magnetometer calibration
+	MAV_CMD_DO_CANCEL_MAG_CAL               = 42426 // Cancel a running magnetometer calibration
+	MAV_CMD_ACCELCAL_VEHICLE_POS            = 42429 // Used when doing accelerometer calibration. When sent to the GCS tells it what position to put the vehicle in. When sent to the vehicle says what position the vehicle is in.
+	MAV_CMD_DO_SEND_BANNER                  = 42428 // Reply with the version banner
+	MAV_CMD_GIMBAL_RESET                    = 42501 // Causes the gimbal to reset and boot as if it was just powered on
+	MAV_CMD_SET_FACTORY_TEST_MODE           = 42427 // Command autopilot to get into factory test/diagnostic mode
+	MAV_CMD_GIMBAL_AXIS_CALIBRATION_STATUS  = 42502 // Reports progress and success or failure of gimbal axis calibration procedure
+	MAV_CMD_GIMBAL_REQUEST_AXIS_CALIBRATION = 42503 // Starts commutation calibration on the gimbal
+	MAV_CMD_GIMBAL_FULL_RESET               = 42505 // Erases gimbal application and parameters
 )
 
 // LimitsState:
@@ -346,8 +346,8 @@ const (
 	EKF_POS_VERT_ABS       = 32  // set if EKF's vertical position (absolute) estimate is good
 	EKF_POS_VERT_AGL       = 64  // set if EKF's vertical position (above ground) estimate is good
 	EKF_CONST_POS_MODE     = 128 // EKF is in constant position mode and does not know it's absolute or relative position
-	EKF_PRED_POS_HORIZ_REL = 8   // set if EKF's predicted horizontal position (relative) estimate is good
-	EKF_PRED_POS_HORIZ_ABS = 9   // set if EKF's predicted horizontal position (absolute) estimate is good
+	EKF_PRED_POS_HORIZ_REL = 256 // set if EKF's predicted horizontal position (relative) estimate is good
+	EKF_PRED_POS_HORIZ_ABS = 512 // set if EKF's predicted horizontal position (absolute) estimate is good
 )
 
 // PidTuningAxis:
@@ -372,8 +372,8 @@ const (
 
 // MavRemoteLogDataBlockCommands: Special ACK block numbers control activation of dataflash log streaming
 const (
-	MAV_REMOTE_LOG_DATA_BLOCK_STOP  = 0 // UAV to stop sending DataFlash blocks
-	MAV_REMOTE_LOG_DATA_BLOCK_START = 1 // UAV to start sending DataFlash blocks
+	MAV_REMOTE_LOG_DATA_BLOCK_STOP  = 2147483645 // UAV to stop sending DataFlash blocks
+	MAV_REMOTE_LOG_DATA_BLOCK_START = 2147483646 // UAV to start sending DataFlash blocks
 )
 
 // MavRemoteLogDataBlockStatuses: Possible remote log data block statuses
@@ -2655,344 +2655,6 @@ func (self *Rpm) Unpack(p *Packet) error {
 	return nil
 }
 
-// Read registers for a device
-type DeviceOpRead struct {
-	RequestId       uint32   // request ID - copied to reply
-	TargetSystem    uint8    // System ID
-	TargetComponent uint8    // Component ID
-	Bustype         uint8    // The bus type
-	Bus             uint8    // Bus number
-	Address         uint8    // Bus address
-	Busname         [40]byte // Name of device on bus (for SPI)
-	Regstart        uint8    // First register to read
-	Count           uint8    // count of registers to read
-}
-
-func (self *DeviceOpRead) MsgID() uint8 {
-	return 0
-}
-
-func (self *DeviceOpRead) MsgName() string {
-	return "DeviceOpRead"
-}
-
-func (self *DeviceOpRead) Pack(p *Packet) error {
-	payload := make([]byte, 51)
-	binary.LittleEndian.PutUint32(payload[0:], uint32(self.RequestId))
-	payload[4] = byte(self.TargetSystem)
-	payload[5] = byte(self.TargetComponent)
-	payload[6] = byte(self.Bustype)
-	payload[7] = byte(self.Bus)
-	payload[8] = byte(self.Address)
-	copy(payload[9:], self.Busname[:])
-	payload[49] = byte(self.Regstart)
-	payload[50] = byte(self.Count)
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *DeviceOpRead) Unpack(p *Packet) error {
-	if len(p.Payload) < 51 {
-		return fmt.Errorf("payload too small")
-	}
-	self.RequestId = uint32(binary.LittleEndian.Uint32(p.Payload[0:]))
-	self.TargetSystem = uint8(p.Payload[4])
-	self.TargetComponent = uint8(p.Payload[5])
-	self.Bustype = uint8(p.Payload[6])
-	self.Bus = uint8(p.Payload[7])
-	self.Address = uint8(p.Payload[8])
-	copy(self.Busname[:], p.Payload[9:49])
-	self.Regstart = uint8(p.Payload[49])
-	self.Count = uint8(p.Payload[50])
-	return nil
-}
-
-// Read registers reply
-type DeviceOpReadReply struct {
-	RequestId uint32     // request ID - copied from request
-	Result    uint8      // 0 for success, anything else is failure code
-	Regstart  uint8      // starting register
-	Count     uint8      // count of bytes read
-	Data      [128]uint8 // reply data
-}
-
-func (self *DeviceOpReadReply) MsgID() uint8 {
-	return 0
-}
-
-func (self *DeviceOpReadReply) MsgName() string {
-	return "DeviceOpReadReply"
-}
-
-func (self *DeviceOpReadReply) Pack(p *Packet) error {
-	payload := make([]byte, 135)
-	binary.LittleEndian.PutUint32(payload[0:], uint32(self.RequestId))
-	payload[4] = byte(self.Result)
-	payload[5] = byte(self.Regstart)
-	payload[6] = byte(self.Count)
-	copy(payload[7:], self.Data[:])
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *DeviceOpReadReply) Unpack(p *Packet) error {
-	if len(p.Payload) < 135 {
-		return fmt.Errorf("payload too small")
-	}
-	self.RequestId = uint32(binary.LittleEndian.Uint32(p.Payload[0:]))
-	self.Result = uint8(p.Payload[4])
-	self.Regstart = uint8(p.Payload[5])
-	self.Count = uint8(p.Payload[6])
-	copy(self.Data[:], p.Payload[7:135])
-	return nil
-}
-
-// Write registers for a device
-type DeviceOpWrite struct {
-	RequestId       uint32     // request ID - copied to reply
-	TargetSystem    uint8      // System ID
-	TargetComponent uint8      // Component ID
-	Bustype         uint8      // The bus type
-	Bus             uint8      // Bus number
-	Address         uint8      // Bus address
-	Busname         [40]byte   // Name of device on bus (for SPI)
-	Regstart        uint8      // First register to write
-	Count           uint8      // count of registers to write
-	Data            [128]uint8 // write data
-}
-
-func (self *DeviceOpWrite) MsgID() uint8 {
-	return 0
-}
-
-func (self *DeviceOpWrite) MsgName() string {
-	return "DeviceOpWrite"
-}
-
-func (self *DeviceOpWrite) Pack(p *Packet) error {
-	payload := make([]byte, 179)
-	binary.LittleEndian.PutUint32(payload[0:], uint32(self.RequestId))
-	payload[4] = byte(self.TargetSystem)
-	payload[5] = byte(self.TargetComponent)
-	payload[6] = byte(self.Bustype)
-	payload[7] = byte(self.Bus)
-	payload[8] = byte(self.Address)
-	copy(payload[9:], self.Busname[:])
-	payload[49] = byte(self.Regstart)
-	payload[50] = byte(self.Count)
-	copy(payload[51:], self.Data[:])
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *DeviceOpWrite) Unpack(p *Packet) error {
-	if len(p.Payload) < 179 {
-		return fmt.Errorf("payload too small")
-	}
-	self.RequestId = uint32(binary.LittleEndian.Uint32(p.Payload[0:]))
-	self.TargetSystem = uint8(p.Payload[4])
-	self.TargetComponent = uint8(p.Payload[5])
-	self.Bustype = uint8(p.Payload[6])
-	self.Bus = uint8(p.Payload[7])
-	self.Address = uint8(p.Payload[8])
-	copy(self.Busname[:], p.Payload[9:49])
-	self.Regstart = uint8(p.Payload[49])
-	self.Count = uint8(p.Payload[50])
-	copy(self.Data[:], p.Payload[51:179])
-	return nil
-}
-
-// Write registers reply
-type DeviceOpWriteReply struct {
-	RequestId uint32 // request ID - copied from request
-	Result    uint8  // 0 for success, anything else is failure code
-}
-
-func (self *DeviceOpWriteReply) MsgID() uint8 {
-	return 0
-}
-
-func (self *DeviceOpWriteReply) MsgName() string {
-	return "DeviceOpWriteReply"
-}
-
-func (self *DeviceOpWriteReply) Pack(p *Packet) error {
-	payload := make([]byte, 5)
-	binary.LittleEndian.PutUint32(payload[0:], uint32(self.RequestId))
-	payload[4] = byte(self.Result)
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *DeviceOpWriteReply) Unpack(p *Packet) error {
-	if len(p.Payload) < 5 {
-		return fmt.Errorf("payload too small")
-	}
-	self.RequestId = uint32(binary.LittleEndian.Uint32(p.Payload[0:]))
-	self.Result = uint8(p.Payload[4])
-	return nil
-}
-
-// Adaptive Controller tuning information
-type AdapTuning struct {
-	Desired  float32 // desired rate (degrees/s)
-	Achieved float32 // achieved rate (degrees/s)
-	Error    float32 // error between model and vehicle
-	Theta    float32 // theta estimated state predictor
-	Omega    float32 // omega estimated state predictor
-	Sigma    float32 // sigma estimated state predictor
-	ThetaDot float32 // theta derivative
-	OmegaDot float32 // omega derivative
-	SigmaDot float32 // sigma derivative
-	F        float32 // projection operator value
-	FDot     float32 // projection operator derivative
-	U        float32 // u adaptive controlled output command
-	Axis     uint8   // axis
-}
-
-func (self *AdapTuning) MsgID() uint8 {
-	return 0
-}
-
-func (self *AdapTuning) MsgName() string {
-	return "AdapTuning"
-}
-
-func (self *AdapTuning) Pack(p *Packet) error {
-	payload := make([]byte, 49)
-	binary.LittleEndian.PutUint32(payload[0:], math.Float32bits(self.Desired))
-	binary.LittleEndian.PutUint32(payload[4:], math.Float32bits(self.Achieved))
-	binary.LittleEndian.PutUint32(payload[8:], math.Float32bits(self.Error))
-	binary.LittleEndian.PutUint32(payload[12:], math.Float32bits(self.Theta))
-	binary.LittleEndian.PutUint32(payload[16:], math.Float32bits(self.Omega))
-	binary.LittleEndian.PutUint32(payload[20:], math.Float32bits(self.Sigma))
-	binary.LittleEndian.PutUint32(payload[24:], math.Float32bits(self.ThetaDot))
-	binary.LittleEndian.PutUint32(payload[28:], math.Float32bits(self.OmegaDot))
-	binary.LittleEndian.PutUint32(payload[32:], math.Float32bits(self.SigmaDot))
-	binary.LittleEndian.PutUint32(payload[36:], math.Float32bits(self.F))
-	binary.LittleEndian.PutUint32(payload[40:], math.Float32bits(self.FDot))
-	binary.LittleEndian.PutUint32(payload[44:], math.Float32bits(self.U))
-	payload[48] = byte(self.Axis)
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *AdapTuning) Unpack(p *Packet) error {
-	if len(p.Payload) < 49 {
-		return fmt.Errorf("payload too small")
-	}
-	self.Desired = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[0:]))
-	self.Achieved = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[4:]))
-	self.Error = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[8:]))
-	self.Theta = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[12:]))
-	self.Omega = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[16:]))
-	self.Sigma = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[20:]))
-	self.ThetaDot = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[24:]))
-	self.OmegaDot = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[28:]))
-	self.SigmaDot = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[32:]))
-	self.F = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[36:]))
-	self.FDot = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[40:]))
-	self.U = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[44:]))
-	self.Axis = uint8(p.Payload[48])
-	return nil
-}
-
-// camera vision based attitude and position deltas
-type VisionPositionDelta struct {
-	TimeUsec      uint64     // Timestamp (microseconds, synced to UNIX time or since system boot)
-	TimeDeltaUsec uint64     // Time in microseconds since the last reported camera frame
-	AngleDelta    [3]float32 // Defines a rotation vector in body frame that rotates the vehicle from the previous to the current orientation
-	PositionDelta [3]float32 // Change in position in meters from previous to current frame rotated into body frame (0=forward, 1=right, 2=down)
-	Confidence    float32    // normalised confidence value from 0 to 100
-}
-
-func (self *VisionPositionDelta) MsgID() uint8 {
-	return 0
-}
-
-func (self *VisionPositionDelta) MsgName() string {
-	return "VisionPositionDelta"
-}
-
-func (self *VisionPositionDelta) Pack(p *Packet) error {
-	payload := make([]byte, 44)
-	binary.LittleEndian.PutUint64(payload[0:], uint64(self.TimeUsec))
-	binary.LittleEndian.PutUint64(payload[8:], uint64(self.TimeDeltaUsec))
-	for i, v := range self.AngleDelta {
-		binary.LittleEndian.PutUint32(payload[16+i*4:], math.Float32bits(v))
-	}
-	for i, v := range self.PositionDelta {
-		binary.LittleEndian.PutUint32(payload[28+i*4:], math.Float32bits(v))
-	}
-	binary.LittleEndian.PutUint32(payload[40:], math.Float32bits(self.Confidence))
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *VisionPositionDelta) Unpack(p *Packet) error {
-	if len(p.Payload) < 44 {
-		return fmt.Errorf("payload too small")
-	}
-	self.TimeUsec = uint64(binary.LittleEndian.Uint64(p.Payload[0:]))
-	self.TimeDeltaUsec = uint64(binary.LittleEndian.Uint64(p.Payload[8:]))
-	for i := 0; i < len(self.AngleDelta); i++ {
-		self.AngleDelta[i] = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[16+i*4:]))
-	}
-	for i := 0; i < len(self.PositionDelta); i++ {
-		self.PositionDelta[i] = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[28+i*4:]))
-	}
-	self.Confidence = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[40:]))
-	return nil
-}
-
-// Angle of Attack and Side Slip Angle
-type AoaSsa struct {
-	TimeUsec uint64  // Timestamp (micros since boot or Unix epoch)
-	Aoa      float32 // Angle of Attack (degrees)
-	Ssa      float32 // Side Slip Angle (degrees)
-}
-
-func (self *AoaSsa) MsgID() uint8 {
-	return 0
-}
-
-func (self *AoaSsa) MsgName() string {
-	return "AoaSsa"
-}
-
-func (self *AoaSsa) Pack(p *Packet) error {
-	payload := make([]byte, 16)
-	binary.LittleEndian.PutUint64(payload[0:], uint64(self.TimeUsec))
-	binary.LittleEndian.PutUint32(payload[8:], math.Float32bits(self.Aoa))
-	binary.LittleEndian.PutUint32(payload[12:], math.Float32bits(self.Ssa))
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *AoaSsa) Unpack(p *Packet) error {
-	if len(p.Payload) < 16 {
-		return fmt.Errorf("payload too small")
-	}
-	self.TimeUsec = uint64(binary.LittleEndian.Uint64(p.Payload[0:]))
-	self.Aoa = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[8:]))
-	self.Ssa = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[12:]))
-	return nil
-}
-
 // Message IDs
 const (
 	MSG_ID_SENSOR_OFFSETS            = 150
@@ -3045,13 +2707,6 @@ const (
 	MSG_ID_GOPRO_SET_REQUEST         = 218
 	MSG_ID_GOPRO_SET_RESPONSE        = 219
 	MSG_ID_RPM                       = 226
-	MSG_ID_DEVICE_OP_READ            = 0
-	MSG_ID_DEVICE_OP_READ_REPLY      = 0
-	MSG_ID_DEVICE_OP_WRITE           = 0
-	MSG_ID_DEVICE_OP_WRITE_REPLY     = 0
-	MSG_ID_ADAP_TUNING               = 0
-	MSG_ID_VISION_POSITION_DELTA     = 0
-	MSG_ID_AOA_SSA                   = 0
 )
 
 // DialectArdupilotmega is the dialect represented by ardupilotmega.xml
@@ -3108,12 +2763,5 @@ var DialectArdupilotmega *Dialect = &Dialect{
 		218: 17,  // MSG_ID_GOPRO_SET_REQUEST
 		219: 162, // MSG_ID_GOPRO_SET_RESPONSE
 		226: 207, // MSG_ID_RPM
-		0:   134, // MSG_ID_DEVICE_OP_READ
-		0:   15,  // MSG_ID_DEVICE_OP_READ_REPLY
-		0:   234, // MSG_ID_DEVICE_OP_WRITE
-		0:   64,  // MSG_ID_DEVICE_OP_WRITE_REPLY
-		0:   46,  // MSG_ID_ADAP_TUNING
-		0:   106, // MSG_ID_VISION_POSITION_DELTA
-		0:   205, // MSG_ID_AOA_SSA
 	},
 }

@@ -175,32 +175,32 @@ const (
 
 // MavSysStatusSensor: These encode the sensors whose status is sent as part of the SYS_STATUS message.
 const (
-	MAV_SYS_STATUS_SENSOR_3D_GYRO                = 1   // 0x01 3D gyro
-	MAV_SYS_STATUS_SENSOR_3D_ACCEL               = 2   // 0x02 3D accelerometer
-	MAV_SYS_STATUS_SENSOR_3D_MAG                 = 4   // 0x04 3D magnetometer
-	MAV_SYS_STATUS_SENSOR_ABSOLUTE_PRESSURE      = 8   // 0x08 absolute pressure
-	MAV_SYS_STATUS_SENSOR_DIFFERENTIAL_PRESSURE  = 16  // 0x10 differential pressure
-	MAV_SYS_STATUS_SENSOR_GPS                    = 32  // 0x20 GPS
-	MAV_SYS_STATUS_SENSOR_OPTICAL_FLOW           = 64  // 0x40 optical flow
-	MAV_SYS_STATUS_SENSOR_VISION_POSITION        = 128 // 0x80 computer vision position
-	MAV_SYS_STATUS_SENSOR_LASER_POSITION         = 8   // 0x100 laser based position
-	MAV_SYS_STATUS_SENSOR_EXTERNAL_GROUND_TRUTH  = 9   // 0x200 external ground truth (Vicon or Leica)
-	MAV_SYS_STATUS_SENSOR_ANGULAR_RATE_CONTROL   = 10  // 0x400 3D angular rate control
-	MAV_SYS_STATUS_SENSOR_ATTITUDE_STABILIZATION = 11  // 0x800 attitude stabilization
-	MAV_SYS_STATUS_SENSOR_YAW_POSITION           = 12  // 0x1000 yaw position
-	MAV_SYS_STATUS_SENSOR_Z_ALTITUDE_CONTROL     = 13  // 0x2000 z/altitude control
-	MAV_SYS_STATUS_SENSOR_XY_POSITION_CONTROL    = 14  // 0x4000 x/y position control
-	MAV_SYS_STATUS_SENSOR_MOTOR_OUTPUTS          = 15  // 0x8000 motor outputs / control
-	MAV_SYS_STATUS_SENSOR_RC_RECEIVER            = 16  // 0x10000 rc receiver
-	MAV_SYS_STATUS_SENSOR_3D_GYRO2               = 17  // 0x20000 2nd 3D gyro
-	MAV_SYS_STATUS_SENSOR_3D_ACCEL2              = 18  // 0x40000 2nd 3D accelerometer
-	MAV_SYS_STATUS_SENSOR_3D_MAG2                = 19  // 0x80000 2nd 3D magnetometer
-	MAV_SYS_STATUS_GEOFENCE                      = 20  // 0x100000 geofence
-	MAV_SYS_STATUS_AHRS                          = 21  // 0x200000 AHRS subsystem health
-	MAV_SYS_STATUS_TERRAIN                       = 22  // 0x400000 Terrain subsystem health
-	MAV_SYS_STATUS_REVERSE_MOTOR                 = 23  // 0x800000 Motors are reversed
-	MAV_SYS_STATUS_LOGGING                       = 24  // 0x1000000 Logging
-	MAV_SYS_STATUS_SENSOR_BATTERY                = 25  // 0x2000000 Battery
+	MAV_SYS_STATUS_SENSOR_3D_GYRO                = 1        // 0x01 3D gyro
+	MAV_SYS_STATUS_SENSOR_3D_ACCEL               = 2        // 0x02 3D accelerometer
+	MAV_SYS_STATUS_SENSOR_3D_MAG                 = 4        // 0x04 3D magnetometer
+	MAV_SYS_STATUS_SENSOR_ABSOLUTE_PRESSURE      = 8        // 0x08 absolute pressure
+	MAV_SYS_STATUS_SENSOR_DIFFERENTIAL_PRESSURE  = 16       // 0x10 differential pressure
+	MAV_SYS_STATUS_SENSOR_GPS                    = 32       // 0x20 GPS
+	MAV_SYS_STATUS_SENSOR_OPTICAL_FLOW           = 64       // 0x40 optical flow
+	MAV_SYS_STATUS_SENSOR_VISION_POSITION        = 128      // 0x80 computer vision position
+	MAV_SYS_STATUS_SENSOR_LASER_POSITION         = 256      // 0x100 laser based position
+	MAV_SYS_STATUS_SENSOR_EXTERNAL_GROUND_TRUTH  = 512      // 0x200 external ground truth (Vicon or Leica)
+	MAV_SYS_STATUS_SENSOR_ANGULAR_RATE_CONTROL   = 1024     // 0x400 3D angular rate control
+	MAV_SYS_STATUS_SENSOR_ATTITUDE_STABILIZATION = 2048     // 0x800 attitude stabilization
+	MAV_SYS_STATUS_SENSOR_YAW_POSITION           = 4096     // 0x1000 yaw position
+	MAV_SYS_STATUS_SENSOR_Z_ALTITUDE_CONTROL     = 8192     // 0x2000 z/altitude control
+	MAV_SYS_STATUS_SENSOR_XY_POSITION_CONTROL    = 16384    // 0x4000 x/y position control
+	MAV_SYS_STATUS_SENSOR_MOTOR_OUTPUTS          = 32768    // 0x8000 motor outputs / control
+	MAV_SYS_STATUS_SENSOR_RC_RECEIVER            = 65536    // 0x10000 rc receiver
+	MAV_SYS_STATUS_SENSOR_3D_GYRO2               = 131072   // 0x20000 2nd 3D gyro
+	MAV_SYS_STATUS_SENSOR_3D_ACCEL2              = 262144   // 0x40000 2nd 3D accelerometer
+	MAV_SYS_STATUS_SENSOR_3D_MAG2                = 524288   // 0x80000 2nd 3D magnetometer
+	MAV_SYS_STATUS_GEOFENCE                      = 1048576  // 0x100000 geofence
+	MAV_SYS_STATUS_AHRS                          = 2097152  // 0x200000 AHRS subsystem health
+	MAV_SYS_STATUS_TERRAIN                       = 4194304  // 0x400000 Terrain subsystem health
+	MAV_SYS_STATUS_REVERSE_MOTOR                 = 8388608  // 0x800000 Motors are reversed
+	MAV_SYS_STATUS_LOGGING                       = 16777216 // 0x1000000 Logging
+	MAV_SYS_STATUS_SENSOR_BATTERY                = 33554432 // 0x2000000 Battery
 )
 
 // MavFrame:
@@ -257,122 +257,122 @@ const (
 
 // MavCmd: Commands to be executed by the MAV. They can be executed on user request, or as part of a mission script. If the action is used in a mission, the parameter mapping to the waypoint/mission message is as follows: Param 1, Param 2, Param 3, Param 4, X: Param 5, Y:Param 6, Z:Param 7. This command list is similar what ARINC 424 is for commercial aircraft: A data format how to interpret waypoint/mission data.
 const (
-	MAV_CMD_NAV_WAYPOINT                       = 16  // Navigate to MISSION.
-	MAV_CMD_NAV_LOITER_UNLIM                   = 17  // Loiter around this MISSION an unlimited amount of time
-	MAV_CMD_NAV_LOITER_TURNS                   = 18  // Loiter around this MISSION for X turns
-	MAV_CMD_NAV_LOITER_TIME                    = 19  // Loiter around this MISSION for X seconds
-	MAV_CMD_NAV_RETURN_TO_LAUNCH               = 20  // Return to launch location
-	MAV_CMD_NAV_LAND                           = 21  // Land at location
-	MAV_CMD_NAV_TAKEOFF                        = 22  // Takeoff from ground / hand
-	MAV_CMD_NAV_LAND_LOCAL                     = 23  // Land at local position (local frame only)
-	MAV_CMD_NAV_TAKEOFF_LOCAL                  = 24  // Takeoff from local position (local frame only)
-	MAV_CMD_NAV_FOLLOW                         = 25  // Vehicle following, i.e. this waypoint represents the position of a moving vehicle
-	MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT        = 30  // Continue on the current course and climb/descend to specified altitude.  When the altitude is reached continue to the next command (i.e., don't proceed to the next command until the desired altitude is reached.
-	MAV_CMD_NAV_LOITER_TO_ALT                  = 31  // Begin loiter at the specified Latitude and Longitude.  If Lat=Lon=0, then loiter at the current position.  Don't consider the navigation command complete (don't leave loiter) until the altitude has been reached.  Additionally, if the Heading Required parameter is non-zero the  aircraft will not leave the loiter until heading toward the next waypoint.
-	MAV_CMD_DO_FOLLOW                          = 32  // Being following a target
-	MAV_CMD_DO_FOLLOW_REPOSITION               = 33  // Reposition the MAV after a follow target command has been sent
-	MAV_CMD_NAV_ROI                            = 80  // Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various sensors such as cameras.
-	MAV_CMD_NAV_PATHPLANNING                   = 81  // Control autonomous path planning on the MAV.
-	MAV_CMD_NAV_SPLINE_WAYPOINT                = 82  // Navigate to MISSION using a spline path.
-	MAV_CMD_NAV_VTOL_TAKEOFF                   = 84  // Takeoff from ground using VTOL mode
-	MAV_CMD_NAV_VTOL_LAND                      = 85  // Land using VTOL mode
-	MAV_CMD_NAV_GUIDED_ENABLE                  = 92  // hand control over to an external controller
-	MAV_CMD_NAV_DELAY                          = 93  // Delay the next navigation command a number of seconds or until a specified time
-	MAV_CMD_NAV_PAYLOAD_PLACE                  = 94  // Descend and place payload.  Vehicle descends until it detects a hanging payload has reached the ground, the gripper is opened to release the payload
-	MAV_CMD_NAV_LAST                           = 95  // NOP - This command is only used to mark the upper limit of the NAV/ACTION commands in the enumeration
-	MAV_CMD_CONDITION_DELAY                    = 112 // Delay mission state machine.
-	MAV_CMD_CONDITION_CHANGE_ALT               = 113 // Ascend/descend at rate.  Delay mission state machine until desired altitude reached.
-	MAV_CMD_CONDITION_DISTANCE                 = 114 // Delay mission state machine until within desired distance of next NAV point.
-	MAV_CMD_CONDITION_YAW                      = 115 // Reach a certain target angle.
-	MAV_CMD_CONDITION_LAST                     = 159 // NOP - This command is only used to mark the upper limit of the CONDITION commands in the enumeration
-	MAV_CMD_DO_SET_MODE                        = 176 // Set system mode.
-	MAV_CMD_DO_JUMP                            = 177 // Jump to the desired command in the mission list.  Repeat this action only the specified number of times
-	MAV_CMD_DO_CHANGE_SPEED                    = 178 // Change speed and/or throttle set points.
-	MAV_CMD_DO_SET_HOME                        = 179 // Changes the home location either to the current location or a specified location.
-	MAV_CMD_DO_SET_PARAMETER                   = 180 // Set a system parameter.  Caution!  Use of this command requires knowledge of the numeric enumeration value of the parameter.
-	MAV_CMD_DO_SET_RELAY                       = 181 // Set a relay to a condition.
-	MAV_CMD_DO_REPEAT_RELAY                    = 182 // Cycle a relay on and off for a desired number of cyles with a desired period.
-	MAV_CMD_DO_SET_SERVO                       = 183 // Set a servo to a desired PWM value.
-	MAV_CMD_DO_REPEAT_SERVO                    = 184 // Cycle a between its nominal setting and a desired PWM for a desired number of cycles with a desired period.
-	MAV_CMD_DO_FLIGHTTERMINATION               = 185 // Terminate flight immediately
-	MAV_CMD_DO_CHANGE_ALTITUDE                 = 186 // Change altitude set point.
-	MAV_CMD_DO_LAND_START                      = 189 // Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts. It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used. The Latitude/Longitude is optional, and may be set to 0/0 if not needed. If specified then it will be used to help find the closest landing sequence.
-	MAV_CMD_DO_RALLY_LAND                      = 190 // Mission command to perform a landing from a rally point.
-	MAV_CMD_DO_GO_AROUND                       = 191 // Mission command to safely abort an autonmous landing.
-	MAV_CMD_DO_REPOSITION                      = 192 // Reposition the vehicle to a specific WGS84 global position.
-	MAV_CMD_DO_PAUSE_CONTINUE                  = 193 // If in a GPS controlled position mode, hold the current position or continue.
-	MAV_CMD_DO_SET_REVERSE                     = 194 // Set moving direction to forward or reverse.
-	MAV_CMD_DO_CONTROL_VIDEO                   = 200 // Control onboard camera system.
-	MAV_CMD_DO_SET_ROI                         = 201 // Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various sensors such as cameras.
-	MAV_CMD_DO_DIGICAM_CONFIGURE               = 202 // Mission command to configure an on-board camera controller system.
-	MAV_CMD_DO_DIGICAM_CONTROL                 = 203 // Mission command to control an on-board camera controller system.
-	MAV_CMD_DO_MOUNT_CONFIGURE                 = 204 // Mission command to configure a camera or antenna mount
-	MAV_CMD_DO_MOUNT_CONTROL                   = 205 // Mission command to control a camera or antenna mount
-	MAV_CMD_DO_SET_CAM_TRIGG_DIST              = 206 // Mission command to set CAM_TRIGG_DIST for this flight
-	MAV_CMD_DO_FENCE_ENABLE                    = 207 // Mission command to enable the geofence
-	MAV_CMD_DO_PARACHUTE                       = 208 // Mission command to trigger a parachute
-	MAV_CMD_DO_MOTOR_TEST                      = 209 // Mission command to perform motor test
-	MAV_CMD_DO_INVERTED_FLIGHT                 = 210 // Change to/from inverted flight
-	MAV_CMD_NAV_SET_YAW_SPEED                  = 213 // Sets a desired vehicle turn angle and speed change
-	MAV_CMD_DO_MOUNT_CONTROL_QUAT              = 220 // Mission command to control a camera or antenna mount, using a quaternion as reference.
-	MAV_CMD_DO_GUIDED_MASTER                   = 221 // set id of master controller
-	MAV_CMD_DO_GUIDED_LIMITS                   = 222 // set limits for external control
-	MAV_CMD_DO_ENGINE_CONTROL                  = 223 // Control vehicle engine. This is interpreted by the vehicles engine controller to change the target engine state. It is intended for vehicles with internal combustion engines
-	MAV_CMD_DO_LAST                            = 240 // NOP - This command is only used to mark the upper limit of the DO commands in the enumeration
-	MAV_CMD_PREFLIGHT_CALIBRATION              = 241 // Trigger calibration. This command will be only accepted if in pre-flight mode. Except for Temperature Calibration, only one sensor should be set in a single message and all others should be zero.
-	MAV_CMD_PREFLIGHT_SET_SENSOR_OFFSETS       = 242 // Set sensor offsets. This command will be only accepted if in pre-flight mode.
-	MAV_CMD_PREFLIGHT_UAVCAN                   = 243 // Trigger UAVCAN config. This command will be only accepted if in pre-flight mode.
-	MAV_CMD_PREFLIGHT_STORAGE                  = 245 // Request storage of different parameter values and logs. This command will be only accepted if in pre-flight mode.
-	MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN          = 246 // Request the reboot or shutdown of system components.
-	MAV_CMD_OVERRIDE_GOTO                      = 252 // Hold / continue the current action
-	MAV_CMD_MISSION_START                      = 68  // start running a mission
-	MAV_CMD_COMPONENT_ARM_DISARM               = 69  // Arms / Disarms a component
-	MAV_CMD_GET_HOME_POSITION                  = 70  // Request the home position from the vehicle.
-	MAV_CMD_START_RX_PAIR                      = 71  // Starts receiver pairing
-	MAV_CMD_GET_MESSAGE_INTERVAL               = 72  // Request the interval between messages for a particular MAVLink message ID
-	MAV_CMD_SET_MESSAGE_INTERVAL               = 73  // Request the interval between messages for a particular MAVLink message ID. This interface replaces REQUEST_DATA_STREAM
-	MAV_CMD_REQUEST_AUTOPILOT_CAPABILITIES     = 74  // Request autopilot capabilities
-	MAV_CMD_REQUEST_CAMERA_INFORMATION         = 75  // WIP: Request camera information (CAMERA_INFORMATION)
-	MAV_CMD_REQUEST_CAMERA_SETTINGS            = 76  // WIP: Request camera settings (CAMERA_SETTINGS)
-	MAV_CMD_SET_CAMERA_SETTINGS_1              = 77  // WIP: Set the camera settings part 1 (CAMERA_SETTINGS)
-	MAV_CMD_SET_CAMERA_SETTINGS_2              = 78  // WIP: Set the camera settings part 2 (CAMERA_SETTINGS)
-	MAV_CMD_REQUEST_STORAGE_INFORMATION        = 79  // WIP: Request storage information (STORAGE_INFORMATION)
-	MAV_CMD_STORAGE_FORMAT                     = 80  // WIP: Format a storage medium
-	MAV_CMD_REQUEST_CAMERA_CAPTURE_STATUS      = 81  // WIP: Request camera capture status (CAMERA_CAPTURE_STATUS)
-	MAV_CMD_REQUEST_FLIGHT_INFORMATION         = 82  // WIP: Request flight information (FLIGHT_INFORMATION)
-	MAV_CMD_IMAGE_START_CAPTURE                = 83  // Start image capture sequence. Sends CAMERA_IMAGE_CAPTURED after each capture.
-	MAV_CMD_IMAGE_STOP_CAPTURE                 = 84  // Stop image capture sequence
-	MAV_CMD_DO_TRIGGER_CONTROL                 = 85  // Enable or disable on-board camera triggering system.
-	MAV_CMD_VIDEO_START_CAPTURE                = 86  // Starts video capture (recording)
-	MAV_CMD_VIDEO_STOP_CAPTURE                 = 87  // Stop the current video capture (recording)
-	MAV_CMD_LOGGING_START                      = 88  // Request to start streaming logging data over MAVLink (see also LOGGING_DATA message)
-	MAV_CMD_LOGGING_STOP                       = 89  // Request to stop streaming log data over MAVLink
-	MAV_CMD_AIRFRAME_CONFIGURATION             = 90  //
-	MAV_CMD_PANORAMA_CREATE                    = 91  // Create a panorama at the current position
-	MAV_CMD_DO_VTOL_TRANSITION                 = 92  // Request VTOL transition
-	MAV_CMD_SET_GUIDED_SUBMODE_STANDARD        = 93  // This command sets the submode to standard guided when vehicle is in guided mode. The vehicle holds position and altitude and the user can input the desired velocites along all three axes.
-	MAV_CMD_SET_GUIDED_SUBMODE_CIRCLE          = 94  // This command sets submode circle when vehicle is in guided mode. Vehicle flies along a circle facing the center of the circle. The user can input the velocity along the circle and change the radius. If no input is given the vehicle will hold position.
-	MAV_CMD_NAV_FENCE_RETURN_POINT             = 95  // Fence return point. There can only be one fence return point.
-	MAV_CMD_NAV_FENCE_POLYGON_VERTEX_INCLUSION = 96  // Fence vertex for an inclusion polygon. The vehicle must stay within this area. Minimum of 3 vertices required.
-	MAV_CMD_NAV_FENCE_POLYGON_VERTEX_EXCLUSION = 97  // Fence vertex for an exclusion polygon. The vehicle must stay outside this area. Minimum of 3 vertices required.
-	MAV_CMD_NAV_RALLY_POINT                    = 98  // Rally point. You can have multiple rally points defined.
-	MAV_CMD_PAYLOAD_PREPARE_DEPLOY             = 99  // Deploy payload on a Lat / Lon / Alt position. This includes the navigation to reach the required release position and velocity.
-	MAV_CMD_PAYLOAD_CONTROL_DEPLOY             = 100 // Control the payload deployment.
-	MAV_CMD_WAYPOINT_USER_1                    = 101 // User defined waypoint item. Ground Station will show the Vehicle as flying through this item.
-	MAV_CMD_WAYPOINT_USER_2                    = 102 // User defined waypoint item. Ground Station will show the Vehicle as flying through this item.
-	MAV_CMD_WAYPOINT_USER_3                    = 103 // User defined waypoint item. Ground Station will show the Vehicle as flying through this item.
-	MAV_CMD_WAYPOINT_USER_4                    = 104 // User defined waypoint item. Ground Station will show the Vehicle as flying through this item.
-	MAV_CMD_WAYPOINT_USER_5                    = 105 // User defined waypoint item. Ground Station will show the Vehicle as flying through this item.
-	MAV_CMD_SPATIAL_USER_1                     = 106 // User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item.
-	MAV_CMD_SPATIAL_USER_2                     = 107 // User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item.
-	MAV_CMD_SPATIAL_USER_3                     = 108 // User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item.
-	MAV_CMD_SPATIAL_USER_4                     = 109 // User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item.
-	MAV_CMD_SPATIAL_USER_5                     = 110 // User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item.
-	MAV_CMD_USER_1                             = 111 // User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item.
-	MAV_CMD_USER_2                             = 112 // User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item.
-	MAV_CMD_USER_3                             = 113 // User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item.
-	MAV_CMD_USER_4                             = 114 // User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item.
-	MAV_CMD_USER_5                             = 115 // User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item.
+	MAV_CMD_NAV_WAYPOINT                       = 16    // Navigate to MISSION.
+	MAV_CMD_NAV_LOITER_UNLIM                   = 17    // Loiter around this MISSION an unlimited amount of time
+	MAV_CMD_NAV_LOITER_TURNS                   = 18    // Loiter around this MISSION for X turns
+	MAV_CMD_NAV_LOITER_TIME                    = 19    // Loiter around this MISSION for X seconds
+	MAV_CMD_NAV_RETURN_TO_LAUNCH               = 20    // Return to launch location
+	MAV_CMD_NAV_LAND                           = 21    // Land at location
+	MAV_CMD_NAV_TAKEOFF                        = 22    // Takeoff from ground / hand
+	MAV_CMD_NAV_LAND_LOCAL                     = 23    // Land at local position (local frame only)
+	MAV_CMD_NAV_TAKEOFF_LOCAL                  = 24    // Takeoff from local position (local frame only)
+	MAV_CMD_NAV_FOLLOW                         = 25    // Vehicle following, i.e. this waypoint represents the position of a moving vehicle
+	MAV_CMD_NAV_CONTINUE_AND_CHANGE_ALT        = 30    // Continue on the current course and climb/descend to specified altitude.  When the altitude is reached continue to the next command (i.e., don't proceed to the next command until the desired altitude is reached.
+	MAV_CMD_NAV_LOITER_TO_ALT                  = 31    // Begin loiter at the specified Latitude and Longitude.  If Lat=Lon=0, then loiter at the current position.  Don't consider the navigation command complete (don't leave loiter) until the altitude has been reached.  Additionally, if the Heading Required parameter is non-zero the  aircraft will not leave the loiter until heading toward the next waypoint.
+	MAV_CMD_DO_FOLLOW                          = 32    // Being following a target
+	MAV_CMD_DO_FOLLOW_REPOSITION               = 33    // Reposition the MAV after a follow target command has been sent
+	MAV_CMD_NAV_ROI                            = 80    // Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various sensors such as cameras.
+	MAV_CMD_NAV_PATHPLANNING                   = 81    // Control autonomous path planning on the MAV.
+	MAV_CMD_NAV_SPLINE_WAYPOINT                = 82    // Navigate to MISSION using a spline path.
+	MAV_CMD_NAV_VTOL_TAKEOFF                   = 84    // Takeoff from ground using VTOL mode
+	MAV_CMD_NAV_VTOL_LAND                      = 85    // Land using VTOL mode
+	MAV_CMD_NAV_GUIDED_ENABLE                  = 92    // hand control over to an external controller
+	MAV_CMD_NAV_DELAY                          = 93    // Delay the next navigation command a number of seconds or until a specified time
+	MAV_CMD_NAV_PAYLOAD_PLACE                  = 94    // Descend and place payload.  Vehicle descends until it detects a hanging payload has reached the ground, the gripper is opened to release the payload
+	MAV_CMD_NAV_LAST                           = 95    // NOP - This command is only used to mark the upper limit of the NAV/ACTION commands in the enumeration
+	MAV_CMD_CONDITION_DELAY                    = 112   // Delay mission state machine.
+	MAV_CMD_CONDITION_CHANGE_ALT               = 113   // Ascend/descend at rate.  Delay mission state machine until desired altitude reached.
+	MAV_CMD_CONDITION_DISTANCE                 = 114   // Delay mission state machine until within desired distance of next NAV point.
+	MAV_CMD_CONDITION_YAW                      = 115   // Reach a certain target angle.
+	MAV_CMD_CONDITION_LAST                     = 159   // NOP - This command is only used to mark the upper limit of the CONDITION commands in the enumeration
+	MAV_CMD_DO_SET_MODE                        = 176   // Set system mode.
+	MAV_CMD_DO_JUMP                            = 177   // Jump to the desired command in the mission list.  Repeat this action only the specified number of times
+	MAV_CMD_DO_CHANGE_SPEED                    = 178   // Change speed and/or throttle set points.
+	MAV_CMD_DO_SET_HOME                        = 179   // Changes the home location either to the current location or a specified location.
+	MAV_CMD_DO_SET_PARAMETER                   = 180   // Set a system parameter.  Caution!  Use of this command requires knowledge of the numeric enumeration value of the parameter.
+	MAV_CMD_DO_SET_RELAY                       = 181   // Set a relay to a condition.
+	MAV_CMD_DO_REPEAT_RELAY                    = 182   // Cycle a relay on and off for a desired number of cyles with a desired period.
+	MAV_CMD_DO_SET_SERVO                       = 183   // Set a servo to a desired PWM value.
+	MAV_CMD_DO_REPEAT_SERVO                    = 184   // Cycle a between its nominal setting and a desired PWM for a desired number of cycles with a desired period.
+	MAV_CMD_DO_FLIGHTTERMINATION               = 185   // Terminate flight immediately
+	MAV_CMD_DO_CHANGE_ALTITUDE                 = 186   // Change altitude set point.
+	MAV_CMD_DO_LAND_START                      = 189   // Mission command to perform a landing. This is used as a marker in a mission to tell the autopilot where a sequence of mission items that represents a landing starts. It may also be sent via a COMMAND_LONG to trigger a landing, in which case the nearest (geographically) landing sequence in the mission will be used. The Latitude/Longitude is optional, and may be set to 0/0 if not needed. If specified then it will be used to help find the closest landing sequence.
+	MAV_CMD_DO_RALLY_LAND                      = 190   // Mission command to perform a landing from a rally point.
+	MAV_CMD_DO_GO_AROUND                       = 191   // Mission command to safely abort an autonmous landing.
+	MAV_CMD_DO_REPOSITION                      = 192   // Reposition the vehicle to a specific WGS84 global position.
+	MAV_CMD_DO_PAUSE_CONTINUE                  = 193   // If in a GPS controlled position mode, hold the current position or continue.
+	MAV_CMD_DO_SET_REVERSE                     = 194   // Set moving direction to forward or reverse.
+	MAV_CMD_DO_CONTROL_VIDEO                   = 200   // Control onboard camera system.
+	MAV_CMD_DO_SET_ROI                         = 201   // Sets the region of interest (ROI) for a sensor set or the vehicle itself. This can then be used by the vehicles control system to control the vehicle attitude and the attitude of various sensors such as cameras.
+	MAV_CMD_DO_DIGICAM_CONFIGURE               = 202   // Mission command to configure an on-board camera controller system.
+	MAV_CMD_DO_DIGICAM_CONTROL                 = 203   // Mission command to control an on-board camera controller system.
+	MAV_CMD_DO_MOUNT_CONFIGURE                 = 204   // Mission command to configure a camera or antenna mount
+	MAV_CMD_DO_MOUNT_CONTROL                   = 205   // Mission command to control a camera or antenna mount
+	MAV_CMD_DO_SET_CAM_TRIGG_DIST              = 206   // Mission command to set CAM_TRIGG_DIST for this flight
+	MAV_CMD_DO_FENCE_ENABLE                    = 207   // Mission command to enable the geofence
+	MAV_CMD_DO_PARACHUTE                       = 208   // Mission command to trigger a parachute
+	MAV_CMD_DO_MOTOR_TEST                      = 209   // Mission command to perform motor test
+	MAV_CMD_DO_INVERTED_FLIGHT                 = 210   // Change to/from inverted flight
+	MAV_CMD_NAV_SET_YAW_SPEED                  = 213   // Sets a desired vehicle turn angle and speed change
+	MAV_CMD_DO_MOUNT_CONTROL_QUAT              = 220   // Mission command to control a camera or antenna mount, using a quaternion as reference.
+	MAV_CMD_DO_GUIDED_MASTER                   = 221   // set id of master controller
+	MAV_CMD_DO_GUIDED_LIMITS                   = 222   // set limits for external control
+	MAV_CMD_DO_ENGINE_CONTROL                  = 223   // Control vehicle engine. This is interpreted by the vehicles engine controller to change the target engine state. It is intended for vehicles with internal combustion engines
+	MAV_CMD_DO_LAST                            = 240   // NOP - This command is only used to mark the upper limit of the DO commands in the enumeration
+	MAV_CMD_PREFLIGHT_CALIBRATION              = 241   // Trigger calibration. This command will be only accepted if in pre-flight mode. Except for Temperature Calibration, only one sensor should be set in a single message and all others should be zero.
+	MAV_CMD_PREFLIGHT_SET_SENSOR_OFFSETS       = 242   // Set sensor offsets. This command will be only accepted if in pre-flight mode.
+	MAV_CMD_PREFLIGHT_UAVCAN                   = 243   // Trigger UAVCAN config. This command will be only accepted if in pre-flight mode.
+	MAV_CMD_PREFLIGHT_STORAGE                  = 245   // Request storage of different parameter values and logs. This command will be only accepted if in pre-flight mode.
+	MAV_CMD_PREFLIGHT_REBOOT_SHUTDOWN          = 246   // Request the reboot or shutdown of system components.
+	MAV_CMD_OVERRIDE_GOTO                      = 252   // Hold / continue the current action
+	MAV_CMD_MISSION_START                      = 300   // start running a mission
+	MAV_CMD_COMPONENT_ARM_DISARM               = 400   // Arms / Disarms a component
+	MAV_CMD_GET_HOME_POSITION                  = 410   // Request the home position from the vehicle.
+	MAV_CMD_START_RX_PAIR                      = 500   // Starts receiver pairing
+	MAV_CMD_GET_MESSAGE_INTERVAL               = 510   // Request the interval between messages for a particular MAVLink message ID
+	MAV_CMD_SET_MESSAGE_INTERVAL               = 511   // Request the interval between messages for a particular MAVLink message ID. This interface replaces REQUEST_DATA_STREAM
+	MAV_CMD_REQUEST_AUTOPILOT_CAPABILITIES     = 520   // Request autopilot capabilities
+	MAV_CMD_REQUEST_CAMERA_INFORMATION         = 521   // WIP: Request camera information (CAMERA_INFORMATION)
+	MAV_CMD_REQUEST_CAMERA_SETTINGS            = 522   // WIP: Request camera settings (CAMERA_SETTINGS)
+	MAV_CMD_SET_CAMERA_SETTINGS_1              = 523   // WIP: Set the camera settings part 1 (CAMERA_SETTINGS)
+	MAV_CMD_SET_CAMERA_SETTINGS_2              = 524   // WIP: Set the camera settings part 2 (CAMERA_SETTINGS)
+	MAV_CMD_REQUEST_STORAGE_INFORMATION        = 525   // WIP: Request storage information (STORAGE_INFORMATION)
+	MAV_CMD_STORAGE_FORMAT                     = 526   // WIP: Format a storage medium
+	MAV_CMD_REQUEST_CAMERA_CAPTURE_STATUS      = 527   // WIP: Request camera capture status (CAMERA_CAPTURE_STATUS)
+	MAV_CMD_REQUEST_FLIGHT_INFORMATION         = 528   // WIP: Request flight information (FLIGHT_INFORMATION)
+	MAV_CMD_IMAGE_START_CAPTURE                = 2000  // Start image capture sequence. Sends CAMERA_IMAGE_CAPTURED after each capture.
+	MAV_CMD_IMAGE_STOP_CAPTURE                 = 2001  // Stop image capture sequence
+	MAV_CMD_DO_TRIGGER_CONTROL                 = 2003  // Enable or disable on-board camera triggering system.
+	MAV_CMD_VIDEO_START_CAPTURE                = 2500  // Starts video capture (recording)
+	MAV_CMD_VIDEO_STOP_CAPTURE                 = 2501  // Stop the current video capture (recording)
+	MAV_CMD_LOGGING_START                      = 2510  // Request to start streaming logging data over MAVLink (see also LOGGING_DATA message)
+	MAV_CMD_LOGGING_STOP                       = 2511  // Request to stop streaming log data over MAVLink
+	MAV_CMD_AIRFRAME_CONFIGURATION             = 2520  //
+	MAV_CMD_PANORAMA_CREATE                    = 2800  // Create a panorama at the current position
+	MAV_CMD_DO_VTOL_TRANSITION                 = 3000  // Request VTOL transition
+	MAV_CMD_SET_GUIDED_SUBMODE_STANDARD        = 4000  // This command sets the submode to standard guided when vehicle is in guided mode. The vehicle holds position and altitude and the user can input the desired velocites along all three axes.
+	MAV_CMD_SET_GUIDED_SUBMODE_CIRCLE          = 4001  // This command sets submode circle when vehicle is in guided mode. Vehicle flies along a circle facing the center of the circle. The user can input the velocity along the circle and change the radius. If no input is given the vehicle will hold position.
+	MAV_CMD_NAV_FENCE_RETURN_POINT             = 5000  // Fence return point. There can only be one fence return point.
+	MAV_CMD_NAV_FENCE_POLYGON_VERTEX_INCLUSION = 5001  // Fence vertex for an inclusion polygon. The vehicle must stay within this area. Minimum of 3 vertices required.
+	MAV_CMD_NAV_FENCE_POLYGON_VERTEX_EXCLUSION = 5002  // Fence vertex for an exclusion polygon. The vehicle must stay outside this area. Minimum of 3 vertices required.
+	MAV_CMD_NAV_RALLY_POINT                    = 5100  // Rally point. You can have multiple rally points defined.
+	MAV_CMD_PAYLOAD_PREPARE_DEPLOY             = 30001 // Deploy payload on a Lat / Lon / Alt position. This includes the navigation to reach the required release position and velocity.
+	MAV_CMD_PAYLOAD_CONTROL_DEPLOY             = 30002 // Control the payload deployment.
+	MAV_CMD_WAYPOINT_USER_1                    = 31000 // User defined waypoint item. Ground Station will show the Vehicle as flying through this item.
+	MAV_CMD_WAYPOINT_USER_2                    = 31001 // User defined waypoint item. Ground Station will show the Vehicle as flying through this item.
+	MAV_CMD_WAYPOINT_USER_3                    = 31002 // User defined waypoint item. Ground Station will show the Vehicle as flying through this item.
+	MAV_CMD_WAYPOINT_USER_4                    = 31003 // User defined waypoint item. Ground Station will show the Vehicle as flying through this item.
+	MAV_CMD_WAYPOINT_USER_5                    = 31004 // User defined waypoint item. Ground Station will show the Vehicle as flying through this item.
+	MAV_CMD_SPATIAL_USER_1                     = 31005 // User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item.
+	MAV_CMD_SPATIAL_USER_2                     = 31006 // User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item.
+	MAV_CMD_SPATIAL_USER_3                     = 31007 // User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item.
+	MAV_CMD_SPATIAL_USER_4                     = 31008 // User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item.
+	MAV_CMD_SPATIAL_USER_5                     = 31009 // User defined spatial item. Ground Station will not show the Vehicle as flying through this item. Example: ROI item.
+	MAV_CMD_USER_1                             = 31010 // User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item.
+	MAV_CMD_USER_2                             = 31011 // User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item.
+	MAV_CMD_USER_3                             = 31012 // User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item.
+	MAV_CMD_USER_4                             = 31013 // User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item.
+	MAV_CMD_USER_5                             = 31014 // User defined command. Ground Station will not show the Vehicle as flying through this item. Example: MAV_CMD_DO_SET_PARAMETER item.
 )
 
 // MavDataStream: THIS INTERFACE IS DEPRECATED AS OF JULY 2015. Please use MESSAGE_INTERVAL instead. A data stream is not a fixed set of messages, but rather a      recommendation to the autopilot software. Individual autopilots may or may not obey      the recommended messages.
@@ -546,22 +546,22 @@ const (
 
 // MavProtocolCapability: Bitmask of (optional) autopilot capabilities (64 bit). If a bit is set, the autopilot supports this capability.
 const (
-	MAV_PROTOCOL_CAPABILITY_MISSION_FLOAT                  = 1   // Autopilot supports MISSION float message type.
-	MAV_PROTOCOL_CAPABILITY_PARAM_FLOAT                    = 2   // Autopilot supports the new param float message type.
-	MAV_PROTOCOL_CAPABILITY_MISSION_INT                    = 4   // Autopilot supports MISSION_INT scaled integer message type.
-	MAV_PROTOCOL_CAPABILITY_COMMAND_INT                    = 8   // Autopilot supports COMMAND_INT scaled integer message type.
-	MAV_PROTOCOL_CAPABILITY_PARAM_UNION                    = 16  // Autopilot supports the new param union message type.
-	MAV_PROTOCOL_CAPABILITY_FTP                            = 32  // Autopilot supports the new FILE_TRANSFER_PROTOCOL message type.
-	MAV_PROTOCOL_CAPABILITY_SET_ATTITUDE_TARGET            = 64  // Autopilot supports commanding attitude offboard.
-	MAV_PROTOCOL_CAPABILITY_SET_POSITION_TARGET_LOCAL_NED  = 128 // Autopilot supports commanding position and velocity targets in local NED frame.
-	MAV_PROTOCOL_CAPABILITY_SET_POSITION_TARGET_GLOBAL_INT = 8   // Autopilot supports commanding position and velocity targets in global scaled integers.
-	MAV_PROTOCOL_CAPABILITY_TERRAIN                        = 9   // Autopilot supports terrain protocol / data handling.
-	MAV_PROTOCOL_CAPABILITY_SET_ACTUATOR_TARGET            = 10  // Autopilot supports direct actuator control.
-	MAV_PROTOCOL_CAPABILITY_FLIGHT_TERMINATION             = 11  // Autopilot supports the flight termination command.
-	MAV_PROTOCOL_CAPABILITY_COMPASS_CALIBRATION            = 12  // Autopilot supports onboard compass calibration.
-	MAV_PROTOCOL_CAPABILITY_MAVLINK2                       = 13  // Autopilot supports mavlink version 2.
-	MAV_PROTOCOL_CAPABILITY_MISSION_FENCE                  = 14  // Autopilot supports mission fence protocol.
-	MAV_PROTOCOL_CAPABILITY_MISSION_RALLY                  = 15  // Autopilot supports mission rally point protocol.
+	MAV_PROTOCOL_CAPABILITY_MISSION_FLOAT                  = 1     // Autopilot supports MISSION float message type.
+	MAV_PROTOCOL_CAPABILITY_PARAM_FLOAT                    = 2     // Autopilot supports the new param float message type.
+	MAV_PROTOCOL_CAPABILITY_MISSION_INT                    = 4     // Autopilot supports MISSION_INT scaled integer message type.
+	MAV_PROTOCOL_CAPABILITY_COMMAND_INT                    = 8     // Autopilot supports COMMAND_INT scaled integer message type.
+	MAV_PROTOCOL_CAPABILITY_PARAM_UNION                    = 16    // Autopilot supports the new param union message type.
+	MAV_PROTOCOL_CAPABILITY_FTP                            = 32    // Autopilot supports the new FILE_TRANSFER_PROTOCOL message type.
+	MAV_PROTOCOL_CAPABILITY_SET_ATTITUDE_TARGET            = 64    // Autopilot supports commanding attitude offboard.
+	MAV_PROTOCOL_CAPABILITY_SET_POSITION_TARGET_LOCAL_NED  = 128   // Autopilot supports commanding position and velocity targets in local NED frame.
+	MAV_PROTOCOL_CAPABILITY_SET_POSITION_TARGET_GLOBAL_INT = 256   // Autopilot supports commanding position and velocity targets in global scaled integers.
+	MAV_PROTOCOL_CAPABILITY_TERRAIN                        = 512   // Autopilot supports terrain protocol / data handling.
+	MAV_PROTOCOL_CAPABILITY_SET_ACTUATOR_TARGET            = 1024  // Autopilot supports direct actuator control.
+	MAV_PROTOCOL_CAPABILITY_FLIGHT_TERMINATION             = 2048  // Autopilot supports the flight termination command.
+	MAV_PROTOCOL_CAPABILITY_COMPASS_CALIBRATION            = 4096  // Autopilot supports onboard compass calibration.
+	MAV_PROTOCOL_CAPABILITY_MAVLINK2                       = 8192  // Autopilot supports mavlink version 2.
+	MAV_PROTOCOL_CAPABILITY_MISSION_FENCE                  = 16384 // Autopilot supports mission fence protocol.
+	MAV_PROTOCOL_CAPABILITY_MISSION_RALLY                  = 32768 // Autopilot supports mission rally point protocol.
 )
 
 // MavMissionType: Type of mission items being requested/sent in mission protocol.
@@ -665,17 +665,17 @@ const (
 
 // EstimatorStatusFlags: Flags in EKF_STATUS message
 const (
-	ESTIMATOR_ATTITUDE           = 1   // True if the attitude estimate is good
-	ESTIMATOR_VELOCITY_HORIZ     = 2   // True if the horizontal velocity estimate is good
-	ESTIMATOR_VELOCITY_VERT      = 4   // True if the  vertical velocity estimate is good
-	ESTIMATOR_POS_HORIZ_REL      = 8   // True if the horizontal position (relative) estimate is good
-	ESTIMATOR_POS_HORIZ_ABS      = 16  // True if the horizontal position (absolute) estimate is good
-	ESTIMATOR_POS_VERT_ABS       = 32  // True if the vertical position (absolute) estimate is good
-	ESTIMATOR_POS_VERT_AGL       = 64  // True if the vertical position (above ground) estimate is good
-	ESTIMATOR_CONST_POS_MODE     = 128 // True if the EKF is in a constant position mode and is not using external measurements (eg GPS or optical flow)
-	ESTIMATOR_PRED_POS_HORIZ_REL = 8   // True if the EKF has sufficient data to enter a mode that will provide a (relative) position estimate
-	ESTIMATOR_PRED_POS_HORIZ_ABS = 9   // True if the EKF has sufficient data to enter a mode that will provide a (absolute) position estimate
-	ESTIMATOR_GPS_GLITCH         = 10  // True if the EKF has detected a GPS glitch
+	ESTIMATOR_ATTITUDE           = 1    // True if the attitude estimate is good
+	ESTIMATOR_VELOCITY_HORIZ     = 2    // True if the horizontal velocity estimate is good
+	ESTIMATOR_VELOCITY_VERT      = 4    // True if the  vertical velocity estimate is good
+	ESTIMATOR_POS_HORIZ_REL      = 8    // True if the horizontal position (relative) estimate is good
+	ESTIMATOR_POS_HORIZ_ABS      = 16   // True if the horizontal position (absolute) estimate is good
+	ESTIMATOR_POS_VERT_ABS       = 32   // True if the vertical position (absolute) estimate is good
+	ESTIMATOR_POS_VERT_AGL       = 64   // True if the vertical position (above ground) estimate is good
+	ESTIMATOR_CONST_POS_MODE     = 128  // True if the EKF is in a constant position mode and is not using external measurements (eg GPS or optical flow)
+	ESTIMATOR_PRED_POS_HORIZ_REL = 256  // True if the EKF has sufficient data to enter a mode that will provide a (relative) position estimate
+	ESTIMATOR_PRED_POS_HORIZ_ABS = 512  // True if the EKF has sufficient data to enter a mode that will provide a (absolute) position estimate
+	ESTIMATOR_GPS_GLITCH         = 1024 // True if the EKF has detected a GPS glitch
 )
 
 // MotorTestOrder:
@@ -7601,622 +7601,6 @@ func (self *Debug) Unpack(p *Packet) error {
 	return nil
 }
 
-// Setup a MAVLink2 signing key. If called with secret_key of all zero and zero initial_timestamp will disable signing
-type SetupSigning struct {
-	InitialTimestamp uint64    // initial timestamp
-	TargetSystem     uint8     // system id of the target
-	TargetComponent  uint8     // component ID of the target
-	SecretKey        [32]uint8 // signing key
-}
-
-func (self *SetupSigning) MsgID() uint8 {
-	return 0
-}
-
-func (self *SetupSigning) MsgName() string {
-	return "SetupSigning"
-}
-
-func (self *SetupSigning) Pack(p *Packet) error {
-	payload := make([]byte, 42)
-	binary.LittleEndian.PutUint64(payload[0:], uint64(self.InitialTimestamp))
-	payload[8] = byte(self.TargetSystem)
-	payload[9] = byte(self.TargetComponent)
-	copy(payload[10:], self.SecretKey[:])
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *SetupSigning) Unpack(p *Packet) error {
-	if len(p.Payload) < 42 {
-		return fmt.Errorf("payload too small")
-	}
-	self.InitialTimestamp = uint64(binary.LittleEndian.Uint64(p.Payload[0:]))
-	self.TargetSystem = uint8(p.Payload[8])
-	self.TargetComponent = uint8(p.Payload[9])
-	copy(self.SecretKey[:], p.Payload[10:42])
-	return nil
-}
-
-// Report button state change
-type ButtonChange struct {
-	TimeBootMs   uint32 // Timestamp (milliseconds since system boot)
-	LastChangeMs uint32 // Time of last change of button state
-	State        uint8  // Bitmap state of buttons
-}
-
-func (self *ButtonChange) MsgID() uint8 {
-	return 0
-}
-
-func (self *ButtonChange) MsgName() string {
-	return "ButtonChange"
-}
-
-func (self *ButtonChange) Pack(p *Packet) error {
-	payload := make([]byte, 9)
-	binary.LittleEndian.PutUint32(payload[0:], uint32(self.TimeBootMs))
-	binary.LittleEndian.PutUint32(payload[4:], uint32(self.LastChangeMs))
-	payload[8] = byte(self.State)
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *ButtonChange) Unpack(p *Packet) error {
-	if len(p.Payload) < 9 {
-		return fmt.Errorf("payload too small")
-	}
-	self.TimeBootMs = uint32(binary.LittleEndian.Uint32(p.Payload[0:]))
-	self.LastChangeMs = uint32(binary.LittleEndian.Uint32(p.Payload[4:]))
-	self.State = uint8(p.Payload[8])
-	return nil
-}
-
-// Control vehicle tone generation (buzzer)
-type PlayTune struct {
-	TargetSystem    uint8    // System ID
-	TargetComponent uint8    // Component ID
-	Tune            [30]byte // tune in board specific format
-}
-
-func (self *PlayTune) MsgID() uint8 {
-	return 0
-}
-
-func (self *PlayTune) MsgName() string {
-	return "PlayTune"
-}
-
-func (self *PlayTune) Pack(p *Packet) error {
-	payload := make([]byte, 32)
-	payload[0] = byte(self.TargetSystem)
-	payload[1] = byte(self.TargetComponent)
-	copy(payload[2:], self.Tune[:])
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *PlayTune) Unpack(p *Packet) error {
-	if len(p.Payload) < 32 {
-		return fmt.Errorf("payload too small")
-	}
-	self.TargetSystem = uint8(p.Payload[0])
-	self.TargetComponent = uint8(p.Payload[1])
-	copy(self.Tune[:], p.Payload[2:32])
-	return nil
-}
-
-// WIP: Information about a camera
-type CameraInformation struct {
-	TimeBootMs  uint32    // Timestamp (milliseconds since system boot)
-	FocalLength float32   // Focal length in mm
-	SensorSizeH float32   // Image sensor size horizontal in mm
-	SensorSizeV float32   // Image sensor size vertical in mm
-	ResolutionH uint16    // Image resolution in pixels horizontal
-	ResolutionV uint16    // Image resolution in pixels vertical
-	CameraId    uint8     // Camera ID if there are multiple
-	VendorName  [32]uint8 // Name of the camera vendor
-	ModelName   [32]uint8 // Name of the camera model
-	LenseId     uint8     // Reserved for a lense ID
-}
-
-func (self *CameraInformation) MsgID() uint8 {
-	return 0
-}
-
-func (self *CameraInformation) MsgName() string {
-	return "CameraInformation"
-}
-
-func (self *CameraInformation) Pack(p *Packet) error {
-	payload := make([]byte, 86)
-	binary.LittleEndian.PutUint32(payload[0:], uint32(self.TimeBootMs))
-	binary.LittleEndian.PutUint32(payload[4:], math.Float32bits(self.FocalLength))
-	binary.LittleEndian.PutUint32(payload[8:], math.Float32bits(self.SensorSizeH))
-	binary.LittleEndian.PutUint32(payload[12:], math.Float32bits(self.SensorSizeV))
-	binary.LittleEndian.PutUint16(payload[16:], uint16(self.ResolutionH))
-	binary.LittleEndian.PutUint16(payload[18:], uint16(self.ResolutionV))
-	payload[20] = byte(self.CameraId)
-	copy(payload[21:], self.VendorName[:])
-	copy(payload[53:], self.ModelName[:])
-	payload[85] = byte(self.LenseId)
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *CameraInformation) Unpack(p *Packet) error {
-	if len(p.Payload) < 86 {
-		return fmt.Errorf("payload too small")
-	}
-	self.TimeBootMs = uint32(binary.LittleEndian.Uint32(p.Payload[0:]))
-	self.FocalLength = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[4:]))
-	self.SensorSizeH = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[8:]))
-	self.SensorSizeV = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[12:]))
-	self.ResolutionH = uint16(binary.LittleEndian.Uint16(p.Payload[16:]))
-	self.ResolutionV = uint16(binary.LittleEndian.Uint16(p.Payload[18:]))
-	self.CameraId = uint8(p.Payload[20])
-	copy(self.VendorName[:], p.Payload[21:53])
-	copy(self.ModelName[:], p.Payload[53:85])
-	self.LenseId = uint8(p.Payload[85])
-	return nil
-}
-
-// WIP: Settings of a camera, can be requested using MAV_CMD_REQUEST_CAMERA_SETTINGS and written using MAV_CMD_SET_CAMERA_SETTINGS
-type CameraSettings struct {
-	TimeBootMs           uint32  // Timestamp (milliseconds since system boot)
-	Aperture             float32 // Aperture is 1/value
-	ShutterSpeed         float32 // Shutter speed in s
-	IsoSensitivity       float32 // ISO sensitivity
-	WhiteBalance         float32 // Color temperature in degrees Kelvin
-	CameraId             uint8   // Camera ID if there are multiple
-	ApertureLocked       uint8   // Aperture locked (0: auto, 1: locked)
-	ShutterSpeedLocked   uint8   // Shutter speed locked (0: auto, 1: locked)
-	IsoSensitivityLocked uint8   // ISO sensitivity locked (0: auto, 1: locked)
-	WhiteBalanceLocked   uint8   // Color temperature locked (0: auto, 1: locked)
-	ModeId               uint8   // Reserved for a camera mode ID
-	ColorModeId          uint8   // Reserved for a color mode ID
-	ImageFormatId        uint8   // Reserved for image format ID
-}
-
-func (self *CameraSettings) MsgID() uint8 {
-	return 0
-}
-
-func (self *CameraSettings) MsgName() string {
-	return "CameraSettings"
-}
-
-func (self *CameraSettings) Pack(p *Packet) error {
-	payload := make([]byte, 28)
-	binary.LittleEndian.PutUint32(payload[0:], uint32(self.TimeBootMs))
-	binary.LittleEndian.PutUint32(payload[4:], math.Float32bits(self.Aperture))
-	binary.LittleEndian.PutUint32(payload[8:], math.Float32bits(self.ShutterSpeed))
-	binary.LittleEndian.PutUint32(payload[12:], math.Float32bits(self.IsoSensitivity))
-	binary.LittleEndian.PutUint32(payload[16:], math.Float32bits(self.WhiteBalance))
-	payload[20] = byte(self.CameraId)
-	payload[21] = byte(self.ApertureLocked)
-	payload[22] = byte(self.ShutterSpeedLocked)
-	payload[23] = byte(self.IsoSensitivityLocked)
-	payload[24] = byte(self.WhiteBalanceLocked)
-	payload[25] = byte(self.ModeId)
-	payload[26] = byte(self.ColorModeId)
-	payload[27] = byte(self.ImageFormatId)
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *CameraSettings) Unpack(p *Packet) error {
-	if len(p.Payload) < 28 {
-		return fmt.Errorf("payload too small")
-	}
-	self.TimeBootMs = uint32(binary.LittleEndian.Uint32(p.Payload[0:]))
-	self.Aperture = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[4:]))
-	self.ShutterSpeed = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[8:]))
-	self.IsoSensitivity = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[12:]))
-	self.WhiteBalance = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[16:]))
-	self.CameraId = uint8(p.Payload[20])
-	self.ApertureLocked = uint8(p.Payload[21])
-	self.ShutterSpeedLocked = uint8(p.Payload[22])
-	self.IsoSensitivityLocked = uint8(p.Payload[23])
-	self.WhiteBalanceLocked = uint8(p.Payload[24])
-	self.ModeId = uint8(p.Payload[25])
-	self.ColorModeId = uint8(p.Payload[26])
-	self.ImageFormatId = uint8(p.Payload[27])
-	return nil
-}
-
-// WIP: Information about a storage medium
-type StorageInformation struct {
-	TimeBootMs        uint32  // Timestamp (milliseconds since system boot)
-	TotalCapacity     float32 // Total capacity in MiB
-	UsedCapacity      float32 // Used capacity in MiB
-	AvailableCapacity float32 // Available capacity in MiB
-	ReadSpeed         float32 // Read speed in MiB/s
-	WriteSpeed        float32 // Write speed in MiB/s
-	StorageId         uint8   // Storage ID if there are multiple
-	Status            uint8   // Status of storage (0 not available, 1 unformatted, 2 formatted)
-}
-
-func (self *StorageInformation) MsgID() uint8 {
-	return 0
-}
-
-func (self *StorageInformation) MsgName() string {
-	return "StorageInformation"
-}
-
-func (self *StorageInformation) Pack(p *Packet) error {
-	payload := make([]byte, 26)
-	binary.LittleEndian.PutUint32(payload[0:], uint32(self.TimeBootMs))
-	binary.LittleEndian.PutUint32(payload[4:], math.Float32bits(self.TotalCapacity))
-	binary.LittleEndian.PutUint32(payload[8:], math.Float32bits(self.UsedCapacity))
-	binary.LittleEndian.PutUint32(payload[12:], math.Float32bits(self.AvailableCapacity))
-	binary.LittleEndian.PutUint32(payload[16:], math.Float32bits(self.ReadSpeed))
-	binary.LittleEndian.PutUint32(payload[20:], math.Float32bits(self.WriteSpeed))
-	payload[24] = byte(self.StorageId)
-	payload[25] = byte(self.Status)
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *StorageInformation) Unpack(p *Packet) error {
-	if len(p.Payload) < 26 {
-		return fmt.Errorf("payload too small")
-	}
-	self.TimeBootMs = uint32(binary.LittleEndian.Uint32(p.Payload[0:]))
-	self.TotalCapacity = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[4:]))
-	self.UsedCapacity = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[8:]))
-	self.AvailableCapacity = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[12:]))
-	self.ReadSpeed = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[16:]))
-	self.WriteSpeed = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[20:]))
-	self.StorageId = uint8(p.Payload[24])
-	self.Status = uint8(p.Payload[25])
-	return nil
-}
-
-// WIP: Information about the status of a capture
-type CameraCaptureStatus struct {
-	TimeBootMs        uint32  // Timestamp (milliseconds since system boot)
-	ImageInterval     float32 // Image capture interval in seconds
-	VideoFramerate    float32 // Video frame rate in Hz
-	RecordingTimeMs   uint32  // Time in milliseconds since recording started
-	AvailableCapacity float32 // Available storage capacity in MiB
-	ImageResolutionH  uint16  // Image resolution in pixels horizontal
-	ImageResolutionV  uint16  // Image resolution in pixels vertical
-	VideoResolutionH  uint16  // Video resolution in pixels horizontal
-	VideoResolutionV  uint16  // Video resolution in pixels vertical
-	CameraId          uint8   // Camera ID if there are multiple
-	ImageStatus       uint8   // Current status of image capturing (0: not running, 1: interval capture in progress)
-	VideoStatus       uint8   // Current status of video capturing (0: not running, 1: capture in progress)
-}
-
-func (self *CameraCaptureStatus) MsgID() uint8 {
-	return 0
-}
-
-func (self *CameraCaptureStatus) MsgName() string {
-	return "CameraCaptureStatus"
-}
-
-func (self *CameraCaptureStatus) Pack(p *Packet) error {
-	payload := make([]byte, 31)
-	binary.LittleEndian.PutUint32(payload[0:], uint32(self.TimeBootMs))
-	binary.LittleEndian.PutUint32(payload[4:], math.Float32bits(self.ImageInterval))
-	binary.LittleEndian.PutUint32(payload[8:], math.Float32bits(self.VideoFramerate))
-	binary.LittleEndian.PutUint32(payload[12:], uint32(self.RecordingTimeMs))
-	binary.LittleEndian.PutUint32(payload[16:], math.Float32bits(self.AvailableCapacity))
-	binary.LittleEndian.PutUint16(payload[20:], uint16(self.ImageResolutionH))
-	binary.LittleEndian.PutUint16(payload[22:], uint16(self.ImageResolutionV))
-	binary.LittleEndian.PutUint16(payload[24:], uint16(self.VideoResolutionH))
-	binary.LittleEndian.PutUint16(payload[26:], uint16(self.VideoResolutionV))
-	payload[28] = byte(self.CameraId)
-	payload[29] = byte(self.ImageStatus)
-	payload[30] = byte(self.VideoStatus)
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *CameraCaptureStatus) Unpack(p *Packet) error {
-	if len(p.Payload) < 31 {
-		return fmt.Errorf("payload too small")
-	}
-	self.TimeBootMs = uint32(binary.LittleEndian.Uint32(p.Payload[0:]))
-	self.ImageInterval = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[4:]))
-	self.VideoFramerate = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[8:]))
-	self.RecordingTimeMs = uint32(binary.LittleEndian.Uint32(p.Payload[12:]))
-	self.AvailableCapacity = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[16:]))
-	self.ImageResolutionH = uint16(binary.LittleEndian.Uint16(p.Payload[20:]))
-	self.ImageResolutionV = uint16(binary.LittleEndian.Uint16(p.Payload[22:]))
-	self.VideoResolutionH = uint16(binary.LittleEndian.Uint16(p.Payload[24:]))
-	self.VideoResolutionV = uint16(binary.LittleEndian.Uint16(p.Payload[26:]))
-	self.CameraId = uint8(p.Payload[28])
-	self.ImageStatus = uint8(p.Payload[29])
-	self.VideoStatus = uint8(p.Payload[30])
-	return nil
-}
-
-// WIP: Information about a captured image
-type CameraImageCaptured struct {
-	TimeUtc       uint64     // Timestamp (microseconds since UNIX epoch) in UTC. 0 for unknown.
-	TimeBootMs    uint32     // Timestamp (milliseconds since system boot)
-	Lat           int32      // Latitude, expressed as degrees * 1E7 where image was taken
-	Lon           int32      // Longitude, expressed as degrees * 1E7 where capture was taken
-	Alt           int32      // Altitude in meters, expressed as * 1E3 (AMSL, not WGS84) where image was taken
-	RelativeAlt   int32      // Altitude above ground in meters, expressed as * 1E3 where image was taken
-	Q             [4]float32 // Quaternion of camera orientation (w, x, y, z order, zero-rotation is 0, 0, 0, 0)
-	ImageIndex    int32      // Zero based index of this image (image count since armed -1)
-	CameraId      uint8      // Camera ID if there are multiple
-	CaptureResult int8       // Boolean indicating success (1) or failure (0) while capturing this image.
-	FileUrl       [205]byte  // URL of image taken. Either local storage or http://foo.jpg if camera provides an HTTP interface.
-}
-
-func (self *CameraImageCaptured) MsgID() uint8 {
-	return 0
-}
-
-func (self *CameraImageCaptured) MsgName() string {
-	return "CameraImageCaptured"
-}
-
-func (self *CameraImageCaptured) Pack(p *Packet) error {
-	payload := make([]byte, 255)
-	binary.LittleEndian.PutUint64(payload[0:], uint64(self.TimeUtc))
-	binary.LittleEndian.PutUint32(payload[8:], uint32(self.TimeBootMs))
-	binary.LittleEndian.PutUint32(payload[12:], uint32(self.Lat))
-	binary.LittleEndian.PutUint32(payload[16:], uint32(self.Lon))
-	binary.LittleEndian.PutUint32(payload[20:], uint32(self.Alt))
-	binary.LittleEndian.PutUint32(payload[24:], uint32(self.RelativeAlt))
-	for i, v := range self.Q {
-		binary.LittleEndian.PutUint32(payload[28+i*4:], math.Float32bits(v))
-	}
-	binary.LittleEndian.PutUint32(payload[44:], uint32(self.ImageIndex))
-	payload[48] = byte(self.CameraId)
-	payload[49] = byte(self.CaptureResult)
-	copy(payload[50:], self.FileUrl[:])
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *CameraImageCaptured) Unpack(p *Packet) error {
-	if len(p.Payload) < 255 {
-		return fmt.Errorf("payload too small")
-	}
-	self.TimeUtc = uint64(binary.LittleEndian.Uint64(p.Payload[0:]))
-	self.TimeBootMs = uint32(binary.LittleEndian.Uint32(p.Payload[8:]))
-	self.Lat = int32(binary.LittleEndian.Uint32(p.Payload[12:]))
-	self.Lon = int32(binary.LittleEndian.Uint32(p.Payload[16:]))
-	self.Alt = int32(binary.LittleEndian.Uint32(p.Payload[20:]))
-	self.RelativeAlt = int32(binary.LittleEndian.Uint32(p.Payload[24:]))
-	for i := 0; i < len(self.Q); i++ {
-		self.Q[i] = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[28+i*4:]))
-	}
-	self.ImageIndex = int32(binary.LittleEndian.Uint32(p.Payload[44:]))
-	self.CameraId = uint8(p.Payload[48])
-	self.CaptureResult = int8(p.Payload[49])
-	copy(self.FileUrl[:], p.Payload[50:255])
-	return nil
-}
-
-// WIP: Information about flight since last arming
-type FlightInformation struct {
-	ArmingTimeUtc  uint64 // Timestamp at arming (microseconds since UNIX epoch) in UTC, 0 for unknown
-	TakeoffTimeUtc uint64 // Timestamp at takeoff (microseconds since UNIX epoch) in UTC, 0 for unknown
-	FlightUuid     uint64 // Universally unique identifier (UUID) of flight, should correspond to name of logfiles
-	TimeBootMs     uint32 // Timestamp (milliseconds since system boot)
-}
-
-func (self *FlightInformation) MsgID() uint8 {
-	return 0
-}
-
-func (self *FlightInformation) MsgName() string {
-	return "FlightInformation"
-}
-
-func (self *FlightInformation) Pack(p *Packet) error {
-	payload := make([]byte, 28)
-	binary.LittleEndian.PutUint64(payload[0:], uint64(self.ArmingTimeUtc))
-	binary.LittleEndian.PutUint64(payload[8:], uint64(self.TakeoffTimeUtc))
-	binary.LittleEndian.PutUint64(payload[16:], uint64(self.FlightUuid))
-	binary.LittleEndian.PutUint32(payload[24:], uint32(self.TimeBootMs))
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *FlightInformation) Unpack(p *Packet) error {
-	if len(p.Payload) < 28 {
-		return fmt.Errorf("payload too small")
-	}
-	self.ArmingTimeUtc = uint64(binary.LittleEndian.Uint64(p.Payload[0:]))
-	self.TakeoffTimeUtc = uint64(binary.LittleEndian.Uint64(p.Payload[8:]))
-	self.FlightUuid = uint64(binary.LittleEndian.Uint64(p.Payload[16:]))
-	self.TimeBootMs = uint32(binary.LittleEndian.Uint32(p.Payload[24:]))
-	return nil
-}
-
-// WIP: Orientation of a mount
-type MountOrientation struct {
-	TimeBootMs uint32  // Timestamp (milliseconds since system boot)
-	Roll       float32 // Roll in degrees
-	Pitch      float32 // Pitch in degrees
-	Yaw        float32 // Yaw in degrees
-}
-
-func (self *MountOrientation) MsgID() uint8 {
-	return 0
-}
-
-func (self *MountOrientation) MsgName() string {
-	return "MountOrientation"
-}
-
-func (self *MountOrientation) Pack(p *Packet) error {
-	payload := make([]byte, 16)
-	binary.LittleEndian.PutUint32(payload[0:], uint32(self.TimeBootMs))
-	binary.LittleEndian.PutUint32(payload[4:], math.Float32bits(self.Roll))
-	binary.LittleEndian.PutUint32(payload[8:], math.Float32bits(self.Pitch))
-	binary.LittleEndian.PutUint32(payload[12:], math.Float32bits(self.Yaw))
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *MountOrientation) Unpack(p *Packet) error {
-	if len(p.Payload) < 16 {
-		return fmt.Errorf("payload too small")
-	}
-	self.TimeBootMs = uint32(binary.LittleEndian.Uint32(p.Payload[0:]))
-	self.Roll = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[4:]))
-	self.Pitch = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[8:]))
-	self.Yaw = math.Float32frombits(binary.LittleEndian.Uint32(p.Payload[12:]))
-	return nil
-}
-
-// A message containing logged data (see also MAV_CMD_LOGGING_START)
-type LoggingData struct {
-	Sequence           uint16     // sequence number (can wrap)
-	TargetSystem       uint8      // system ID of the target
-	TargetComponent    uint8      // component ID of the target
-	Length             uint8      // data length
-	FirstMessageOffset uint8      // offset into data where first message starts. This can be used for recovery, when a previous message got lost (set to 255 if no start exists).
-	Data               [249]uint8 // logged data
-}
-
-func (self *LoggingData) MsgID() uint8 {
-	return 0
-}
-
-func (self *LoggingData) MsgName() string {
-	return "LoggingData"
-}
-
-func (self *LoggingData) Pack(p *Packet) error {
-	payload := make([]byte, 255)
-	binary.LittleEndian.PutUint16(payload[0:], uint16(self.Sequence))
-	payload[2] = byte(self.TargetSystem)
-	payload[3] = byte(self.TargetComponent)
-	payload[4] = byte(self.Length)
-	payload[5] = byte(self.FirstMessageOffset)
-	copy(payload[6:], self.Data[:])
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *LoggingData) Unpack(p *Packet) error {
-	if len(p.Payload) < 255 {
-		return fmt.Errorf("payload too small")
-	}
-	self.Sequence = uint16(binary.LittleEndian.Uint16(p.Payload[0:]))
-	self.TargetSystem = uint8(p.Payload[2])
-	self.TargetComponent = uint8(p.Payload[3])
-	self.Length = uint8(p.Payload[4])
-	self.FirstMessageOffset = uint8(p.Payload[5])
-	copy(self.Data[:], p.Payload[6:255])
-	return nil
-}
-
-// A message containing logged data which requires a LOGGING_ACK to be sent back
-type LoggingDataAcked struct {
-	Sequence           uint16     // sequence number (can wrap)
-	TargetSystem       uint8      // system ID of the target
-	TargetComponent    uint8      // component ID of the target
-	Length             uint8      // data length
-	FirstMessageOffset uint8      // offset into data where first message starts. This can be used for recovery, when a previous message got lost (set to 255 if no start exists).
-	Data               [249]uint8 // logged data
-}
-
-func (self *LoggingDataAcked) MsgID() uint8 {
-	return 0
-}
-
-func (self *LoggingDataAcked) MsgName() string {
-	return "LoggingDataAcked"
-}
-
-func (self *LoggingDataAcked) Pack(p *Packet) error {
-	payload := make([]byte, 255)
-	binary.LittleEndian.PutUint16(payload[0:], uint16(self.Sequence))
-	payload[2] = byte(self.TargetSystem)
-	payload[3] = byte(self.TargetComponent)
-	payload[4] = byte(self.Length)
-	payload[5] = byte(self.FirstMessageOffset)
-	copy(payload[6:], self.Data[:])
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *LoggingDataAcked) Unpack(p *Packet) error {
-	if len(p.Payload) < 255 {
-		return fmt.Errorf("payload too small")
-	}
-	self.Sequence = uint16(binary.LittleEndian.Uint16(p.Payload[0:]))
-	self.TargetSystem = uint8(p.Payload[2])
-	self.TargetComponent = uint8(p.Payload[3])
-	self.Length = uint8(p.Payload[4])
-	self.FirstMessageOffset = uint8(p.Payload[5])
-	copy(self.Data[:], p.Payload[6:255])
-	return nil
-}
-
-// An ack for a LOGGING_DATA_ACKED message
-type LoggingAck struct {
-	Sequence        uint16 // sequence number (must match the one in LOGGING_DATA_ACKED)
-	TargetSystem    uint8  // system ID of the target
-	TargetComponent uint8  // component ID of the target
-}
-
-func (self *LoggingAck) MsgID() uint8 {
-	return 0
-}
-
-func (self *LoggingAck) MsgName() string {
-	return "LoggingAck"
-}
-
-func (self *LoggingAck) Pack(p *Packet) error {
-	payload := make([]byte, 4)
-	binary.LittleEndian.PutUint16(payload[0:], uint16(self.Sequence))
-	payload[2] = byte(self.TargetSystem)
-	payload[3] = byte(self.TargetComponent)
-
-	p.MsgID = self.MsgID()
-	p.Payload = payload
-	return nil
-}
-
-func (self *LoggingAck) Unpack(p *Packet) error {
-	if len(p.Payload) < 4 {
-		return fmt.Errorf("payload too small")
-	}
-	self.Sequence = uint16(binary.LittleEndian.Uint16(p.Payload[0:]))
-	self.TargetSystem = uint8(p.Payload[2])
-	self.TargetComponent = uint8(p.Payload[3])
-	return nil
-}
-
 // Message IDs
 const (
 	MSG_ID_HEARTBEAT                               = 0
@@ -8355,19 +7739,6 @@ const (
 	MSG_ID_NAMED_VALUE_INT                         = 252
 	MSG_ID_STATUSTEXT                              = 253
 	MSG_ID_DEBUG                                   = 254
-	MSG_ID_SETUP_SIGNING                           = 0
-	MSG_ID_BUTTON_CHANGE                           = 0
-	MSG_ID_PLAY_TUNE                               = 0
-	MSG_ID_CAMERA_INFORMATION                      = 0
-	MSG_ID_CAMERA_SETTINGS                         = 0
-	MSG_ID_STORAGE_INFORMATION                     = 0
-	MSG_ID_CAMERA_CAPTURE_STATUS                   = 0
-	MSG_ID_CAMERA_IMAGE_CAPTURED                   = 0
-	MSG_ID_FLIGHT_INFORMATION                      = 0
-	MSG_ID_MOUNT_ORIENTATION                       = 0
-	MSG_ID_LOGGING_DATA                            = 0
-	MSG_ID_LOGGING_DATA_ACKED                      = 0
-	MSG_ID_LOGGING_ACK                             = 0
 )
 
 // DialectCommon is the dialect represented by common.xml
@@ -8510,18 +7881,5 @@ var DialectCommon *Dialect = &Dialect{
 		252: 44,  // MSG_ID_NAMED_VALUE_INT
 		253: 83,  // MSG_ID_STATUSTEXT
 		254: 46,  // MSG_ID_DEBUG
-		0:   71,  // MSG_ID_SETUP_SIGNING
-		0:   131, // MSG_ID_BUTTON_CHANGE
-		0:   187, // MSG_ID_PLAY_TUNE
-		0:   122, // MSG_ID_CAMERA_INFORMATION
-		0:   8,   // MSG_ID_CAMERA_SETTINGS
-		0:   244, // MSG_ID_STORAGE_INFORMATION
-		0:   69,  // MSG_ID_CAMERA_CAPTURE_STATUS
-		0:   133, // MSG_ID_CAMERA_IMAGE_CAPTURED
-		0:   49,  // MSG_ID_FLIGHT_INFORMATION
-		0:   26,  // MSG_ID_MOUNT_ORIENTATION
-		0:   193, // MSG_ID_LOGGING_DATA
-		0:   35,  // MSG_ID_LOGGING_DATA_ACKED
-		0:   14,  // MSG_ID_LOGGING_ACK
 	},
 }

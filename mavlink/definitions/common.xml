@@ -3911,7 +3911,8 @@
       <field type="uint8_t" name="ind">index of debug variable</field>
       <field type="float" name="value">DEBUG value</field>
     </message>
-    <!-- messages with ID 256 and above are only available in MAVLink2 -->
+    <!-- commented out because go mavlink does not support mavlink 2
+         messages with ID 256 and above are only available in MAVLink2 
     <message id="256" name="SETUP_SIGNING">
       <description>Setup a MAVLink2 signing key. If called with secret_key of all zero and zero initial_timestamp will disable signing</description>
       <field type="uint8_t" name="target_system">system id of the target</field>
@@ -4038,5 +4039,6 @@
       <field type="uint8_t" name="target_component">component ID of the target</field>
       <field type="uint16_t" name="sequence">sequence number (must match the one in LOGGING_DATA_ACKED)</field>
     </message>
+  -->
   </messages>
 </mavlink>
